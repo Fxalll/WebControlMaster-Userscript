@@ -1,7 +1,3 @@
-好的，根据您提供的脚本代码，我为您生成了以下README文档。
-
----
-
 # 网页控制大师 (Web Control Master)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
