@@ -2375,7 +2375,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
         .nopic-switch.on::after { transform: translateX(12px); }
         .nopic-submenu-trigger::after { content: '›'; font-size: 16px; margin-left: 8px; opacity: 0.7; }
         .nopic-menu-separator { font-size: 10px; color: rgba(255,255,255,0.4); padding: 4px 10px; margin-top: 4px; cursor: default; border-top: 1px solid rgba(255,255,255,0.1); }
-        /* 拓展按钮两列布局 */
+        /* 扩展按钮两列布局 */
         /* 应用图标样式 - 类似手机APP 正方形 */
 .nopic-ext-btn {
   display: flex;
@@ -2547,7 +2547,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
         }
         #nopic-disguise-submenu::-webkit-scrollbar { display: none; }
         #nopic-disguise-submenu.left-side { left: auto; right: 100%; margin-left: 0; margin-right: 4px; }
-        /* 拓展弹窗通用样式 */
+        /* 扩展弹窗通用样式 */
         .nopic-modal-popup {
             position: fixed; display: none;
             background: rgba(30, 30, 35, 1.0); 
@@ -3862,10 +3862,18 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
   filter: grayscale(0.6) !important;
 }
 
-#nopic-about-modal .badge-recommend {
+#nopic-about-modal .badge-now {
   font-size: 9px !important;
   background: rgba(250, 204, 21, 0.2) !important;
   color: #facc15 !important;
+  padding: 1px 7px !important;
+  border-radius: 3px !important;
+  font-weight: 500 !important;
+}
+  #nopic-about-modal .badge-recommend {
+  font-size: 9px !important;
+  background: rgba(48, 250, 21, 0.2) !important;
+  color: #4afa15 !important;
   padding: 1px 7px !important;
   border-radius: 3px !important;
   font-weight: 500 !important;
@@ -6443,9 +6451,9 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
   </div>
 </div>
     <div class="nopic-menu-separator" id="nopic-ext-separator"></div>
-    <div class="nopic-menu-item nopic-submenu-trigger" data-submenu="disguise" style="justify-content:space-between;"><span>拓展</span></div>
+    <div class="nopic-menu-item nopic-submenu-trigger" data-submenu="disguise" style="justify-content:space-between;"><span>扩展</span></div>
     <div class="nopic-menu-item nopic-submenu-trigger" data-submenu="settings" style="justify-content:space-between;"><span>设置</span></div>
-    <div class="nopic-menu-item" data-action="about">关于（当前版本不完整，建议升级）</div>
+    <div class="nopic-menu-item" data-action="about">关于（升级至扩展程序）</div>
     <div class="nopic-menu-item nopic-hide-item" data-action="hide" style="margin-top:4px;">隐藏面板 (Alt+H)</div>
     <div class="nopic-menu-item nopic-hide-item" data-action="permaHide" style="margin-top:2px;color:#f87171;">永久隐藏此站</div>
   `;
@@ -6550,7 +6558,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
           '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>'),
     );
 
-  // ===== 拓展功能二级菜单 =====
+  // ===== 扩展功能二级菜单 =====
   const disguiseSubmenu = document.createElement("div");
   disguiseSubmenu.id = "nopic-disguise-submenu";
   disguiseSubmenu.className = "nopic-submenu";
@@ -6867,7 +6875,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
     <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.1);">
       <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5;">
         <div>• 注意：当前油猴脚本版本的点击器可实现简单的操作</div>
-        <div>• 更复杂的跨页面操作建议安装拓展程序版本</div>
+        <div>• 更复杂的跨页面操作建议安装扩展程序版本</div>
         <div>• 安装方式可在关于页找到</div>
       </div>
     </div>
@@ -7833,7 +7841,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
       pageEditSwitch.style.cursor = "pointer";
     }
 
-    // ===== 拓展分割线显示逻辑 =====
+    // ===== 扩展分割线显示逻辑 =====
     const extSeparator = document.getElementById("nopic-ext-separator");
     const extButtonsRow = document.querySelector(".nopic-ext-buttons-row");
     const col1 = document.querySelector(".nopic-col-1");
@@ -8193,7 +8201,7 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
 
   <!-- 网页控制大师 -->
     <div class="about-section">
-      <div class="about-section-title">网页控制大师 <span class="badge-recommend">当前版本不完整</span></div>
+      <div class="about-section-title">网页控制大师 <span class="badge-now">当前版本非最新版本</span></div>
       <div class="about-section-desc">包含图片控制等更多功能</div>
       
       <div class="about-method method-1">
@@ -8201,18 +8209,19 @@ img:not(.nopic-clone), svg:not(.nopic-clone), .nopic-has-bg:not(.nopic-clone) {
         <a class="btn-edge" href="
 https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagllnh" target="_blank">Edge 商店安装</a>
 
-        <span class="badge-recommend">推荐安装</span>
+        <span class="badge-recommend">推荐升级</span>
       </div>
       
       <div class="about-method method-2">
         <div class="method-label">方式二：</div>
         <a class="btn-edge" href="https://gitee.com/fxalll/WebControlMaster/releases/tag/publish" target="_blank">Gitee 下载</a>
         <a class="btn-edge" href="https://github.com/Fxalll/WebControlMaster/releases/tag/dev" target="_blank">GitHub 下载</a>
+         <span class="badge-recommend">推荐升级</span>
       </div>
       
       <div class="about-method method-3">
         <div class="method-label">方式三：</div>
-        <span class="method-text">GreasyFork 搜索「网页控制大师」 <span class="badge-pending">当前方式（不完整）</span></span>
+        <span class="method-text">GreasyFork 搜索「网页控制大师」 <span class="badge-pending">当前方式（非最新）</span></span>
       </div>
     </div>
 
@@ -8240,11 +8249,11 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
 
     <!-- ===== 方式二通用说明 ===== -->
     <div class="about-guide">
-      <div class="about-guide-title">方式二 · 自行加载拓展（适用所有浏览器）</div>
+      <div class="about-guide-title">方式二 · 自行加载扩展（适用所有浏览器）</div>
       <div class="about-guide-steps">
-        <span>① 进入浏览器「管理拓展」页面</span>
+        <span>① 进入浏览器「管理扩展」页面</span>
         <span>② 打开右上角「开发者模式」开关</span>
-        <span>③ 点击「加载解压缩的拓展」</span>
+        <span>③ 点击「加载解压缩的扩展」</span>
         <span>④ 选择刚才下载并解压的文件夹</span>
       </div>
       <div class="about-guide-note">适用于 Chrome / Edge / 360 等所有 Chromium 内核浏览器</div>
@@ -8361,7 +8370,7 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
     // 使用脚本自带的确认弹窗
     showConfirmModal(
       "⚠️ 温馨提示",
-      "即将打开赞助二维码图片。\n\n如果您同时使用了油猴脚本和拓展程序，请务必先删除油猴版本以避免冲突。\n\n确定要继续吗？",
+      "即将打开赞助二维码图片。\n\n如果您同时使用了油猴脚本和扩展程序，请务必先删除油猴版本以避免冲突。\n\n确定要继续吗？",
       function () {
         // 用户点击"确认"后打开图片
         if (typeof PAY_IMG !== "undefined") {
@@ -10924,15 +10933,15 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
     showSettingsSubmenu();
     hideDisplaySubmenu();
     hideDisguiseSubmenu();
-    // 拓展菜单是点击方式，不自动关闭
+    // 扩展菜单是点击方式，不自动关闭
   });
   settingsSubmenu.addEventListener("mouseenter", showSettingsSubmenu);
 
-  // 拓展菜单事件
+  // 扩展菜单事件
   disguiseTrigger.addEventListener("mouseenter", () => {
     showDisguiseSubmenu();
     hideSettingsSubmenu();
-    // 拓展菜单是点击方式，不自动关闭
+    // 扩展菜单是点击方式，不自动关闭
   });
   disguiseSubmenu.addEventListener("mouseenter", showDisguiseSubmenu);
 
@@ -10948,7 +10957,7 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
       }
       // 如果正在使用输入法输入，不关闭菜单
       if (isComposing) return;
-      // 检查拓展菜单的输入框是否聚焦
+      // 检查扩展菜单的输入框是否聚焦
       const maskColorInput = document.getElementById("nopic-mask-color-input");
       const textReplaceInputs = textReplaceSubmenu.querySelectorAll("input");
       let isInputFocused = false;
@@ -10988,7 +10997,7 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
       ) {
         hideSettingsSubmenu();
         hideDisguiseSubmenu();
-        // 拓展菜单是点击方式，不自动关闭
+        // 扩展菜单是点击方式，不自动关闭
       }
     }, 100);
   });
@@ -11085,7 +11094,7 @@ https://microsoftedge.microsoft.com/addons/detail/mmgfooecliddbadakcegfmjigjagll
       }
       isHovering = false;
       menu.classList.remove("active");
-      // 关闭一级子菜单（设置、显示内容、拓展），二级弹窗有自己的关闭按钮，不自动关闭
+      // 关闭一级子菜单（设置、显示内容、扩展），二级弹窗有自己的关闭按钮，不自动关闭
       settingsSubmenu.style.display = "none";
       displaySubmenu.style.display = "none";
       disguiseSubmenu.style.display = "none";
